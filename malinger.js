@@ -1,33 +1,7 @@
 /**
- * HTTP proxy that makes external APIs slow – lets you test that your application
- * gracefully handles API failures.
+ * Malinger (https://github.com/alienhard/malinger)
  *
- * Useful for testing how an application deals with an API becoming slow (e.g.,
- * are timeouts handled gracefully?). The proxy delays the delivery of the
- * header and body for a given number of seconds.
- *
- * Suports SSL for both incoming requests and proxied requests.
- *
- * Usage: node malinger.js
- *
- * Command line arguments:
- *   --port              The port the proxy listens on, default is 8080
- *   --ssl               Make the proxy listens for HTTPS connections
- *   --delay SECONDS     Delay until response header and body is delivered
- *   --remote-host HOST  The remote host to which requests are proxied (required)
- *   --remote-ssl        Use HTTPS to proxy the requests to the remote host
- *
- *
- * If using --ssl, the files privatekey.pem and certificate.pem are loaded
- * from the current directory. You can create a self-signed SSL cert as follows
- * using openssl:
- *
- *   openssl genrsa -out privatekey.pem 1024
- *   openssl req -new -key privatekey.pem -out certrequest.csr
- *   openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem
- *
- * Note: when using a self-signed certificate, you may need to disable verification of
- * the certificate in the client library. It may be easier to switch to non-SSL mode.
+ * (c) Adrian Lienhard, adrian.lienhard@gmail.com
  */
 
 function start_server(config) {
